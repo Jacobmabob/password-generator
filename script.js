@@ -22,7 +22,7 @@ function generatePassword() {
 
   var choices = ""
   var passwordLength = prompt('How many characters would you like to use?', 'Enter a number between 8 and 128');
-  if ( passwordLength < 8 || passwordLength > 128) {
+  if ( passwordLength !==  8 <= passwordLength <= 128 ) {
     alert('Please enter a number between 8 and 128');
     return; 
   }
@@ -32,26 +32,21 @@ function generatePassword() {
     choices += alphabetLower;
 
   }
-  console.log(choices)
 
   var uppercaseConfirm = confirm('Would you like to use uppercase letters?');
   if (uppercaseConfirm) {
     choices += alphabetUpper; 
   }
-  console.log(choices)
-
+  
   var numberConfirm = confirm('Would you like to use numbers?');
   if (numberConfirm) {
     choices += number; 
   }
-  console.log(choices)
-
+  
   var specialCharConfirm = confirm('Would you like to use special characters?');
   if (specialCharConfirm) {
     choices += specialCharacter;
   }
-
-  console.log(choices)
 
   if (!lowercaseConfirm && !uppercaseConfirm && !numberConfirm && !specialCharConfirm) {
     alert('You must select at least one type of character!');
