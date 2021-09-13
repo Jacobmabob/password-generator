@@ -7,8 +7,6 @@ var alphabetUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 var specialCharacter = "!#$%&'()*+,-./:;<=>?@][^_`{|}~"
 var number = '123456789'
 
-// var choices = ""
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword()    
@@ -22,7 +20,7 @@ function generatePassword() {
 
   var choices = ""
   var passwordLength = prompt('How many characters would you like to use?', 'Enter a number between 8 and 128');
-  if ( passwordLength !==  8 <= passwordLength <= 128 ) {
+  if ( passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength) ) {
     alert('Please enter a number between 8 and 128');
     return; 
   }
@@ -30,7 +28,6 @@ function generatePassword() {
   var lowercaseConfirm = confirm('Would you like to use lowercase letters?');
   if (lowercaseConfirm) {
     choices += alphabetLower;
-
   }
 
   var uppercaseConfirm = confirm('Would you like to use uppercase letters?');
