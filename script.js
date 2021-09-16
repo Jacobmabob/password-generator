@@ -50,7 +50,7 @@ function generatePassword() {
   }
 
   var passwordString = ''
-  for (i = 0; i <= passwordLength; i++) {
+  for (var i = 0; i <= passwordLength; i++) {
   passwordString += choices.charAt(Math.floor(Math.random() * choices.length));
   }
   
